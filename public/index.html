@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Quality Professional Trainings and Workshops </title>
+    <link rel="icon" href="images/favicon.ico" type="image/png" sizes="32x32">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Bringing You The Best and upcoming Market Tech for Your Students for making them Industry Ready by our Experienced mentor">
+    <meta name="keywords" content="Techsalo Workshops, Tecsalo Product, Techsalo Training">
+</head>
+<style>
+    .marginBottom {
+        margin-bottom: 5px;
+    }
+</style>
+<body ng-app="demoApp" ng-strict-di="true">
+<div ng-controller="mainAppController" ng-init="init()" style="margin:10px">
+    <div ng-cloak>
+
+        <form name="myForm" novalidate>
+            <p>Username:<br>
+                <input type="text" name="user" ng-model="student.name" placeholder="Name" required>
+            <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+            <span ng-show="myForm.user.$error.required">Student name is required.</span>
+            </span>
+            </p>
+
+
+            <p>Email:<br>
+                <input type="email" name="email" ng-model="student.email" placeholder="Email" required>
+            <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+            <span ng-show="myForm.email.$error.required">Email is required.</span>
+            <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+            </span>
+            </p>
+
+            <p>Phone Number:<br>
+                <input type="number"
+                       ng-minlength="10"
+                       ng-maxlength="10"
+                       name="phone"
+                       placeholder="Phone"
+                       ng-model="student.phoneNumber"
+                       required>
+            <span style="color:red" ng-show="myForm.phone.$dirty && (myForm.phone.$invalid || myForm.phone.$error.minlength ||
+                           myForm.phone.$error.maxlength)">
+
+                <span ng-show="myForm.phone.$error.required">Phone Number is required.</span>
+            <span
+                    ng-show="((myForm.phone.$error.minlength ||
+                           myForm.phone.$error.maxlength) &&
+                           myForm.phone.$dirty)">
+                           phone number should be 10 digits
+            </span>
+                </span>
+
+            </p>
+            <input type="submit" ng-click="saveStudentData()"
+                   ng-disabled="!(myForm.user.$dirty) || myForm.user.$dirty && myForm.user.$invalid || !(myForm.email.$dirty) || myForm.email.$dirty && myForm.email.$invalid || !(myForm.phone.$dirty) ||(myForm.phone.$error.number || myForm.phone.$error.minlength || myForm.phone.$error.maxlength || myForm.phone.$invalid)">
+        </form>
+
+    </div>
+</div>
+
+<!-- JS DEPENDENCIES -->
+
+<script src="js-req/jquery-2.1.4.min.js"></script>
+<script src="js-req/angular.js"></script>
+<!-- My JS Files -->
+<script src="mainApp/mainAppController.js"></script>
+
+</body>
+</html>
+
+<!--
+     <input name="myName" class="marginBottom" ng-model="student.name" required type="text" placeholder="Name">
+ <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.</span><br>
+ <input class="marginBottom" ng-model="student.email" required type="text" placeholder="Email"><br>
+ <input class="marginBottom" ng-model="student.phoneNumber" required type="text" placeholder="Contact Number"><br>
+ <input class="marginBottom" ng-click="saveStudentData()" type="button" value="Save Info"> <input name="myName" class="marginBottom" ng-model="student.name" required type="text" placeholder="Name">
+ <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.</span><br>
+ <input class="marginBottom" ng-model="student.email" required type="text" placeholder="Email"><br>
+ <input class="marginBottom" ng-model="student.phoneNumber" required type="text" placeholder="Contact Number"><br>
+ <input class="marginBottom" ng-click="saveStudentData()" type="button" value="Save Info">
+-->
