@@ -9,10 +9,10 @@ var configProp={
 	},
 	"prod": {
 		"db": {
-			"url": "mobile-ifa.cybrpgpbnkem.ap-southeast-1.rds.amazonaws.com",
-			"dbname": "mutual_fund",
-			"username": "mobile_ifa",
-			"password": "mobile_ifa"
+			"url": "localhost",
+			"dbname": "demoApp",
+			"username": "root",
+			"password": "root"
 		}
 	}
 }
